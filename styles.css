@@ -12,7 +12,13 @@
   --color-brand-hover: #1d4ed8;
   --color-border: #e2e8f0;
   --radius-md: 8px;
+  --radius-sm: 4px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --font-reading: Georgia, "Times New Roman", serif;
+  --text-reading-size: 17px;
+  --line-height-reading: 1.9;
+  --bg-theme-sepia: #efe6dd;
 }
 
 * {
@@ -53,6 +59,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow: visible;
 }
 
 .header-container {
@@ -60,6 +67,8 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   height: 64px;
+  overflow: visible;
+  position: relative;
 }
 
 .logo {
@@ -96,6 +105,12 @@ a:hover {
   cursor: pointer;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-links a {
   margin: 0 12px;
   font-weight: 500;
@@ -104,11 +119,19 @@ a:hover {
 .dropdown {
   position: relative;
   display: inline-block;
+  height: 100%;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-toggle {
   margin: 0 12px;
   font-weight: 500;
+  display: block;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 8px 0;
 }
 
 .dropdown-menu {
@@ -122,11 +145,15 @@ a:hover {
   list-style: none;
   padding: 8px 0;
   min-width: 150px;
-  z-index: 101;
+  z-index: 1000;
+  margin-top: 4px;
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 .dropdown-menu li {
@@ -365,12 +392,130 @@ a:hover {
    7. FOOTER
    ========================================= */
 .footer {
-  background-color: var(--text-primary);
-  color: white;
-  text-align: center;
-  padding: 24px 0;
-  margin-top: 40px;
+  background-color: #1a202c;
+  color: #e2e8f0;
+  padding: 48px 0 24px;
+  margin-top: 60px;
 }
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.footer-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-section a {
+  font-size: 14px;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: var(--color-brand);
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.footer-social a:hover {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 24px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.footer-bottom p {
+  margin: 4px 0;
+}
+
+.footer-contact {
+  margin-top: 8px;
+}
+
+/* Compact footer for reading page */
+.reading-footer {
+  margin-top: 40px;
+  padding: 32px 0 24px;
+}
+
+.footer-content-compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.footer-content-compact .footer-section ul {
+  gap: 6px;
+}
+
+.footer-content-compact .footer-section a {
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .footer-content-compact {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* =========================================
    8. AUTHENTICATION (ĐĂNG NHẬP / ĐĂNG KÝ)
    ========================================= */
@@ -539,13 +684,50 @@ a:hover {
 
 .auth-footer {
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.auth-footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.auth-footer-links a {
+  color: var(--color-brand);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.auth-footer-links a:hover {
+  opacity: 0.8;
+}
+
+.auth-footer-links span {
   color: var(--text-secondary);
 }
 
-.auth-footer a {
+.auth-footer p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.auth-footer p a {
   color: var(--color-brand);
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.auth-footer-copyright {
+  color: #94a3b8;
+  font-size: 12px;
+  margin-top: 12px !important;
 }
 /* =========================================
    9. ĐĂNG KÝ (Bổ sung cho phần Authentication)
@@ -1043,207 +1225,6 @@ body.reading-mode {
   background-color: var(--bg-surface);
   color: var(--text-secondary);
   margin-top: 0;
-}
-/* =========================================
-   13. LOGGED-IN STATE (TRẠNG THÁI ĐÃ ĐĂNG NHẬP)
-   ========================================= */
-
-/* Khu vực User Actions */
-.user-actions.logged-in {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Chuông thông báo */
-.bell-icon {
-  position: relative;
-  font-size: 20px;
-}
-
-.badge {
-  position: absolute;
-  top: -5px;
-  right: -8px;
-  background-color: #ef4444; /* Màu đỏ nổi bật */
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 10px;
-  border: 2px solid var(--bg-surface);
-}
-
-/* Menu User Profile (Dropdown) */
-.user-profile-menu {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  cursor: pointer;
-  padding-bottom: 10px; /* Tạo vùng đệm để rê chuột không bị mất dropdown */
-  margin-bottom: -10px;
-}
-
-.avatar-circle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--color-brand);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.user-name {
-  font-weight: 500;
-  font-size: 15px;
-}
-
-/* Khung Dropdown ẩn mặc định */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 200px;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  display: flex;
-  flex-direction: column;
-  padding: 8px 0;
-
-  /* Hiệu ứng ẩn/hiện */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.2s ease;
-  z-index: 1000;
-}
-
-/* Hiện Dropdown khi rê chuột vào khung Profile */
-.user-profile-menu:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-menu a {
-  padding: 10px 16px;
-  font-size: 14px;
-  color: var(--text-primary);
-  transition: background-color 0.2s;
-}
-
-.dropdown-menu a:hover {
-  background-color: var(--bg-body);
-  color: var(--color-brand);
-}
-
-.dropdown-menu hr {
-  border: none;
-  border-top: 1px solid var(--color-border);
-  margin: 4px 0;
-}
-
-.text-danger {
-  color: #ef4444 !important;
-}
-
-/* =========================================
-   14. CONTINUE READING (LỊCH SỬ ĐỌC GẦN ĐÂY)
-   ========================================= */
-
-.section-header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 20px;
-}
-
-.view-all-link {
-  font-size: 14px;
-  color: var(--color-brand);
-  font-weight: 500;
-}
-
-.view-all-link:hover {
-  text-decoration: underline;
-}
-
-/* Lưới hiển thị thẻ Lịch sử (Dạng thẻ ngang) */
-.history-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.history-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
-  background-color: var(--bg-body);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-}
-
-.history-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-  border-color: var(--color-brand);
-}
-
-.history-cover {
-  width: 50px;
-  height: 75px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 12px;
-  flex-shrink: 0;
-}
-
-.history-info {
-  flex: 1;
-  overflow: hidden;
-}
-
-.history-title {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.history-chapter {
-  font-size: 13px;
-  color: var(--color-brand);
-  margin-bottom: 4px;
-  font-weight: 500;
-}
-
-.history-time {
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-.btn-sm {
-  padding: 6px 12px;
-  font-size: 13px;
-  border-radius: 20px;
-  white-space: nowrap;
 }
 /* =========================================
    13. LOGGED-IN STATE (TRẠNG THÁI ĐÃ ĐĂNG NHẬP)
