@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Truyện Chữ - Đã Đăng Nhập</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <a href="index-logged.html" class="logo">Novel<span>Web</span></a>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Tìm kiếm truyện, tác giả..." />
+          <button type="button">Tìm</button>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#">Thể Loại</a>
+          <a href="#">Xếp Hạng</a>
+          <a href="#">Truyện Mới</a>
+        </nav>
+
+        <div class="user-actions logged-in">
+          <button class="btn-icon bell-icon">
+            🔔 <span class="badge">3</span>
+          </button>
+
+          <div class="user-profile-menu">
+            <div class="avatar-circle">P</div>
+            <span class="user-name">Phong Tôn Giả</span>
+
+            <div class="dropdown-menu">
+              <a href="#">👤 Hồ sơ cá nhân</a>
+              <a href="#">📚 Tủ sách của tôi</a>
+              <a href="#">💳 Nạp linh thạch</a>
+              <a href="#">⚙️ Cài đặt</a>
+              <hr />
+              <a href="index.html" class="text-danger">🚪 Đăng xuất</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section history-section">
+        <div class="section-header-flex">
+          <h2 class="section-title" style="margin-bottom: 0">
+            Truyện Đang Đọc
+          </h2>
+          <a href="#" class="view-all-link">Vào tủ sách &raquo;</a>
+        </div>
+
+        <div class="history-grid">
+          <div class="history-card">
+            <div class="history-cover" style="background-color: #cbd5e1">
+              Bìa
+            </div>
+            <div class="history-info">
+              <h3 class="history-title">Ngự Đạo Khuynh Thiên</h3>
+              <p class="history-chapter">Đã đọc: Chương 1245</p>
+              <p class="history-time">2 giờ trước</p>
+            </div>
+            <a href="read.html" class="btn-primary btn-sm">Đọc tiếp</a>
+          </div>
+
+          <div class="history-card">
+            <div class="history-cover" style="background-color: #94a3b8">
+              Bìa
+            </div>
+            <div class="history-info">
+              <h3 class="history-title">Quang Âm Chi Ngoại</h3>
+              <p class="history-chapter">Đã đọc: Chương 890</p>
+              <p class="history-time">Hôm qua</p>
+            </div>
+            <a href="#" class="btn-primary btn-sm">Đọc tiếp</a>
+          </div>
+
+          <div class="history-card">
+            <div class="history-cover" style="background-color: #64748b">
+              Bìa
+            </div>
+            <div class="history-info">
+              <h3 class="history-title">Đại Phụng Đả Canh Nhân</h3>
+              <p class="history-chapter">Đã đọc: Chương 15</p>
+              <p class="history-time">3 ngày trước</p>
+            </div>
+            <a href="#" class="btn-primary btn-sm">Đọc tiếp</a>
+          </div>
+        </div>
+      </section>
+      <section class="section featured-section">
+        <h2 class="section-title">Truyện Đề Cử</h2>
+        <p style="color: var(--text-secondary); font-style: italic">
+          (Hiển thị lại danh sách truyện đề cử như file index.html cũ)
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 NovelWeb. Nền tảng đọc truyện chữ trực tuyến.</p>
+      </div>
+    </footer>
+  </body>
+</html>
