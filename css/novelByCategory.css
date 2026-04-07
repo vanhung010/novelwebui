@@ -1,0 +1,446 @@
+/* =========================================
+   NOVEL BY CATEGORY PAGE STYLES
+   ========================================= */
+
+.category-container {
+  min-height: calc(100vh - 70px);
+  padding: 0 0 60px 0;
+}
+
+/* Category Banner */
+.category-banner {
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-hover) 100%);
+  color: white;
+  padding: 60px 40px;
+  border-radius: var(--radius-md);
+  margin-bottom: 40px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.category-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.category-description {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Category Filters */
+.category-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-select {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 150px;
+}
+
+.filter-select:hover {
+  border-color: var(--color-brand);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-reset-filters {
+  padding: 10px 16px;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset-filters:hover {
+  background-color: var(--color-border);
+  color: var(--color-brand);
+}
+
+/* Category Stats */
+.category-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-item {
+  background: linear-gradient(135deg, var(--bg-body) 0%, var(--color-border) 100%);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 28px;
+  color: var(--color-brand);
+  margin-bottom: 5px;
+}
+
+.stat-item span {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Novels Grid - Large Cards */
+.novels-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.novel-card-large {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+}
+
+.novel-card-large:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.novel-cover-large {
+  width: 160px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-hover) 100%);
+  flex-shrink: 0;
+}
+
+.novel-info-large {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.novel-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.novel-author {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.novel-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Novel Stats */
+.novel-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.novel-stats .stat {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Meta Tags */
+.novel-meta-tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: var(--bg-body);
+  color: var(--text-secondary);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+.tag:nth-child(1) {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--color-brand);
+}
+
+.tag:nth-child(2) {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.tag:nth-child(3) {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+/* Read Novel Button */
+.btn-read-novel {
+  align-self: flex-start;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-hover) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-read-novel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.btn-read-novel:active {
+  transform: translateY(0);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.pagination-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: var(--color-brand);
+  color: white;
+  border-color: var(--color-brand);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 14px;
+  color: var(--text-secondary);
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .category-banner {
+    padding: 40px 30px;
+  }
+
+  .category-title {
+    font-size: 36px;
+  }
+
+  .category-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .novel-card-large {
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+  }
+
+  .novel-cover-large {
+    width: 140px;
+    height: 190px;
+  }
+
+  .novel-info-large {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-container {
+    padding: 0 0 40px 0;
+  }
+
+  .category-banner {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+
+  .category-title {
+    font-size: 28px;
+  }
+
+  .category-description {
+    font-size: 14px;
+  }
+
+  .category-filters {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .filter-select {
+    min-width: 100%;
+  }
+
+  .btn-reset-filters {
+    width: 100%;
+  }
+
+  .category-stats {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .novel-card-large {
+    grid-template-columns: 120px 1fr;
+    gap: 12px;
+  }
+
+  .novel-cover-large {
+    width: 120px;
+    height: 160px;
+  }
+
+  .novel-info-large {
+    padding: 12px;
+  }
+
+  .novel-title {
+    font-size: 18px;
+  }
+
+  .novel-description {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+
+  .novel-stats {
+    font-size: 12px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-title {
+    font-size: 22px;
+  }
+
+  .novel-card-large {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .novel-cover-large {
+    width: 100%;
+    height: 200px;
+  }
+
+  .novel-info-large {
+    padding: 16px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pagination-btn {
+    width: 100%;
+  }
+}

@@ -747,240 +747,297 @@ a:hover {
    8. AUTHENTICATION (ĐĂNG NHẬP / ĐĂNG KÝ)
    ========================================= */
 .auth-page {
-  /* Dùng Flexbox để căn giữa toàn bộ trang */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: var(--bg-body);
+    /* Dùng Flexbox để căn giữa toàn bộ trang */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--bg-body);
 }
 
 .auth-container {
-  width: 100%;
-  max-width: 420px;
-  background-color: var(--bg-surface);
-  padding: 40px 32px;
-  border-radius: var(--radius-md);
-  /* Đổ bóng to hơn một chút để Card nổi bật lên */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--bg-surface);
+    padding: 40px 32px;
+    border-radius: var(--radius-md);
+    /* Đổ bóng to hơn một chút để Card nổi bật lên */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .auth-header {
-  text-align: center;
-  margin-bottom: 32px;
+    text-align: center;
+    margin-bottom: 32px;
 }
 
 .auth-header .logo {
-  display: inline-block;
-  font-size: 28px;
-  margin-bottom: 12px;
+    display: inline-block;
+    font-size: 28px;
+    margin-bottom: 12px;
 }
 
 .auth-header h2 {
-  font-size: 24px;
-  margin-bottom: 8px;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
 .auth-header p {
-  color: var(--text-secondary);
-  font-size: 14px;
+    color: var(--text-secondary);
+    font-size: 14px;
 }
 
 /* Kiểu dáng cho các ô nhập liệu (Input) */
 .form-group {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .form-group input {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font-family: var(--font-ui);
-  font-size: 15px;
-  outline: none;
-  transition: all 0.2s ease;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-ui);
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s ease;
 }
 
 /* Hiệu ứng khi click vào ô nhập liệu */
 .form-group input:focus {
-  border-color: var(--color-brand);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Lựa chọn vai trò (Đọc giả / Tác giả) */
+.role-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.role-option {
+    cursor: pointer;
+}
+
+.role-option input[type="radio"] {
+    display: none;
+}
+
+.role-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    background-color: var(--bg-surface);
+}
+
+.role-option input[type="radio"]:checked + .role-label {
+    border-color: var(--color-brand);
+    background-color: rgba(37, 99, 235, 0.05);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.role-option:hover .role-label {
+    border-color: var(--color-brand);
+}
+
+.role-icon {
+    font-size: 28px;
+}
+
+.role-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.role-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
+.role-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
 .form-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-  font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 14px;
 }
 
 .remember-me {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-secondary);
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
 }
 
 .forgot-password {
-  color: var(--color-brand);
-  font-weight: 500;
+    color: var(--color-brand);
+    font-weight: 500;
 }
 
 /* Nút bấm chính */
 .btn-primary {
-  background-color: var(--color-brand);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: var(--radius-md);
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    background-color: var(--color-brand);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-brand-hover);
+    background-color: var(--color-brand-hover);
 }
 
 .btn-block {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 }
 
 /* Đường gạch ngang "Hoặc" */
 .auth-divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 24px 0;
-  color: var(--text-secondary);
-  font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+    color: var(--text-secondary);
+    font-size: 14px;
 }
 
 .auth-divider::before,
 .auth-divider::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid var(--color-border);
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .auth-divider span {
-  padding: 0 16px;
+    padding: 0 16px;
 }
 
 /* Nút đăng nhập mạng xã hội */
 .social-login {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .btn-social {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: transparent;
-  font-weight: 500;
-  cursor: pointer;
-  font-family: var(--font-ui);
-  transition: background-color 0.2s;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: transparent;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    transition: background-color 0.2s;
 }
 
 .btn-social:hover {
-  background-color: var(--color-border);
+    background-color: var(--color-border);
 }
 
 .btn-google {
-  color: #ea4335;
+    color: #ea4335;
 }
 .btn-facebook {
-  color: #1877f2;
+    color: #1877f2;
 }
 
 .auth-footer {
-  text-align: center;
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border);
 }
 
 .auth-footer-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
 }
 
 .auth-footer-links a {
-  color: var(--color-brand);
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+    color: var(--color-brand);
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 }
 
 .auth-footer-links a:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .auth-footer-links span {
-  color: var(--text-secondary);
+    color: var(--text-secondary);
 }
 
 .auth-footer p {
-  margin: 8px 0;
-  font-size: 14px;
+    margin: 8px 0;
+    font-size: 14px;
 }
 
 .auth-footer p a {
-  color: var(--color-brand);
-  font-weight: 600;
+    color: var(--color-brand);
+    font-weight: 600;
 }
 
 .auth-footer-copyright {
-  color: #94a3b8;
-  font-size: 12px;
-  margin-top: 12px !important;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 12px !important;
 }
 /* =========================================
    9. ĐĂNG KÝ (Bổ sung cho phần Authentication)
    ========================================= */
 .terms-text {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 24px;
-  cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 24px;
+    cursor: pointer;
 }
 
 .terms-text input[type="checkbox"] {
-  margin-top: 3px; /* Căn chỉnh checkbox cho ngang hàng với dòng chữ đầu tiên */
+    margin-top: 3px; /* Căn chỉnh checkbox cho ngang hàng với dòng chữ đầu tiên */
 }
 
 .terms-text a {
-  color: var(--color-brand);
-  font-weight: 500;
+    color: var(--color-brand);
+    font-weight: 500;
 }
 
 .terms-text a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 /* =========================================
    10. STORY DETAIL PAGE (TRANG CHI TIẾT TRUYỆN)
