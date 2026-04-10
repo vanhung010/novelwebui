@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Author Workspace - Quản lý truyện</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/manage-novels.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+          <h2>Author Workspace</h2>
+        </div>
+
+        <nav class="menu" aria-label="Menu tác giả">
+          <a class="menu-item" href="author-dashboard.html"
+            ><i class="fa-solid fa-chart-line"></i> Tổng quan</a
+          >
+          <a class="menu-item active" href="manage-novels.html"
+            ><i class="fa-solid fa-book-open"></i> Quản lý truyện</a
+          >
+          <a class="menu-item" href="manage-comments.html"
+            ><i class="fa-solid fa-comments"></i> Bình luận</a
+          >
+          <a class="menu-item" href="withdrawal.html"
+            ><i class="fa-solid fa-wallet"></i> Tài chính</a
+          >
+        </nav>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="menu-toggle" type="button" aria-label="Mở menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <label class="search-box" aria-label="Tìm kiếm trên workspace">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="search"
+                placeholder="Tìm truyện, chương hoặc bình luận..."
+              />
+            </label>
+          </div>
+
+          <div class="topbar-right">
+            <button class="icon-btn" type="button" aria-label="Thông báo">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dot" aria-hidden="true"></span>
+            </button>
+
+            <details class="profile" aria-label="Author profile dropdown">
+              <summary>
+                <span class="profile-avatar">AT</span>
+                <span class="profile-name">An Trần</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <div
+                class="profile-menu"
+                role="menu"
+                aria-label="Tùy chọn tài khoản"
+              >
+                <a href="#" role="menuitem">Hồ sơ tác giả</a>
+                <a href="#" role="menuitem">Cài đặt</a>
+                <a href="#" role="menuitem">Đăng xuất</a>
+              </div>
+            </details>
+          </div>
+        </header>
+
+        <main class="content">
+          <section class="data-card">
+            <div class="page-head">
+              <h1>Danh sách truyện</h1>
+              <a class="primary-btn" href="novel-form.html"
+                ><i class="fa-solid fa-plus"></i> Thêm truyện mới</a
+              >
+            </div>
+
+            <div class="filter-row">
+              <label class="table-search" aria-label="Tìm theo tên truyện">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Tìm theo tên truyện..." />
+              </label>
+
+              <label class="category-filter" for="category-filter">
+                <span>Thể loại:</span>
+                <select id="category-filter" name="category-filter">
+                  <option value="all">Tất cả thể loại</option>
+                  <option value="fantasy">Huyền huyễn</option>
+                  <option value="urban">Đô thị</option>
+                  <option value="romance">Ngôn tình</option>
+                  <option value="historical">Cổ đại</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="table-wrap">
+              <table class="novels-table">
+                <thead>
+                  <tr>
+                    <th>Ảnh bìa</th>
+                    <th>Tên truyện</th>
+                    <th>Thể loại</th>
+                    <th>Lượt xem</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img
+                        class="cover-img"
+                        src="https://placehold.co/56x80/e2e8f0/64748b?text=Cover"
+                        alt="Ảnh bìa Hành Trình Tinh Hải"
+                      />
+                    </td>
+                    <td>
+                      <p class="novel-name">Hành Trình Tinh Hải</p>
+                      <p class="novel-meta">Tác giả: An Trần</p>
+                    </td>
+                    <td>Phiêu lưu</td>
+                    <td>125,000</td>
+                    <td><span class="status-badge ongoing">Đang ra</span></td>
+                    <td>
+                      <div class="actions">
+                        <a
+                          class="icon-action"
+                          href="manage-chapters.html"
+                          title="Quản lý chương"
+                          aria-label="Quản lý chương"
+                          ><i class="fa-solid fa-list-check"></i
+                        ></a>
+                        <a
+                          class="icon-action"
+                          href="novel-form.html"
+                          title="Sửa thông tin"
+                          aria-label="Sửa thông tin"
+                          ><i class="fa-solid fa-pen-to-square"></i
+                        ></a>
+                        <button
+                          class="icon-action danger"
+                          type="button"
+                          title="Xóa"
+                          aria-label="Xóa"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <img
+                        class="cover-img"
+                        src="https://placehold.co/56x80/dbeafe/1e40af?text=Cover"
+                        alt="Ảnh bìa Đêm Trong Thành Cổ"
+                      />
+                    </td>
+                    <td>
+                      <p class="novel-name">Đêm Trong Thành Cổ</p>
+                      <p class="novel-meta">Tác giả: An Trần</p>
+                    </td>
+                    <td>Bí ẩn</td>
+                    <td>92,400</td>
+                    <td><span class="status-badge ongoing">Đang ra</span></td>
+                    <td>
+                      <div class="actions">
+                        <a
+                          class="icon-action"
+                          href="manage-chapters.html"
+                          title="Quản lý chương"
+                          aria-label="Quản lý chương"
+                          ><i class="fa-solid fa-list-check"></i
+                        ></a>
+                        <a
+                          class="icon-action"
+                          href="novel-form.html"
+                          title="Sửa thông tin"
+                          aria-label="Sửa thông tin"
+                          ><i class="fa-solid fa-pen-to-square"></i
+                        ></a>
+                        <button
+                          class="icon-action danger"
+                          type="button"
+                          title="Xóa"
+                          aria-label="Xóa"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <img
+                        class="cover-img"
+                        src="https://placehold.co/56x80/fef3c7/92400e?text=Cover"
+                        alt="Ảnh bìa Lưỡi Kiếm Không Tên"
+                      />
+                    </td>
+                    <td>
+                      <p class="novel-name">Lưỡi Kiếm Không Tên</p>
+                      <p class="novel-meta">Tác giả: An Trần</p>
+                    </td>
+                    <td>Kiếm hiệp</td>
+                    <td>310,600</td>
+                    <td>
+                      <span class="status-badge completed">Hoàn thành</span>
+                    </td>
+                    <td>
+                      <div class="actions">
+                        <a
+                          class="icon-action"
+                          href="manage-chapters.html"
+                          title="Quản lý chương"
+                          aria-label="Quản lý chương"
+                          ><i class="fa-solid fa-list-check"></i
+                        ></a>
+                        <a
+                          class="icon-action"
+                          href="novel-form.html"
+                          title="Sửa thông tin"
+                          aria-label="Sửa thông tin"
+                          ><i class="fa-solid fa-pen-to-square"></i
+                        ></a>
+                        <button
+                          class="icon-action danger"
+                          type="button"
+                          title="Xóa"
+                          aria-label="Xóa"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <img
+                        class="cover-img"
+                        src="https://placehold.co/56x80/ede9fe/5b21b6?text=Cover"
+                        alt="Ảnh bìa Gió Nổi Trên Đỉnh Đèo"
+                      />
+                    </td>
+                    <td>
+                      <p class="novel-name">Gió Nổi Trên Đỉnh Đèo</p>
+                      <p class="novel-meta">Tác giả: An Trần</p>
+                    </td>
+                    <td>Dã sử</td>
+                    <td>143,200</td>
+                    <td><span class="status-badge ongoing">Đang ra</span></td>
+                    <td>
+                      <div class="actions">
+                        <a
+                          class="icon-action"
+                          href="manage-chapters.html"
+                          title="Quản lý chương"
+                          aria-label="Quản lý chương"
+                          ><i class="fa-solid fa-list-check"></i
+                        ></a>
+                        <a
+                          class="icon-action"
+                          href="novel-form.html"
+                          title="Sửa thông tin"
+                          aria-label="Sửa thông tin"
+                          ><i class="fa-solid fa-pen-to-square"></i
+                        ></a>
+                        <button
+                          class="icon-action danger"
+                          type="button"
+                          title="Xóa"
+                          aria-label="Xóa"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="overlay" aria-hidden="true"></div>
+
+    <script>
+      const toggleButton = document.querySelector(".menu-toggle");
+      const overlay = document.querySelector(".overlay");
+      const body = document.body;
+
+      if (toggleButton && overlay) {
+        toggleButton.addEventListener("click", function () {
+          body.classList.toggle("sidebar-open");
+        });
+
+        overlay.addEventListener("click", function () {
+          body.classList.remove("sidebar-open");
+        });
+      }
+    </script>
+  </body>
+</html>

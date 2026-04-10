@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Author Workspace - Viết chương mới</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/chapter-form.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+          <h2>Author Workspace</h2>
+        </div>
+
+        <nav class="menu" aria-label="Menu tác giả">
+          <a class="menu-item" href="author-dashboard.html"
+            ><i class="fa-solid fa-chart-line"></i> Tổng quan</a
+          >
+          <a class="menu-item active" href="manage-novels.html"
+            ><i class="fa-solid fa-book-open"></i> Quản lý truyện</a
+          >
+          <a class="menu-item" href="manage-comments.html"
+            ><i class="fa-solid fa-comments"></i> Bình luận</a
+          >
+          <a class="menu-item" href="withdrawal.html"
+            ><i class="fa-solid fa-wallet"></i> Tài chính</a
+          >
+        </nav>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="menu-toggle" type="button" aria-label="Mở menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <label class="search-box" aria-label="Tìm kiếm trên workspace">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="search"
+                placeholder="Tìm truyện, chương hoặc bình luận..."
+              />
+            </label>
+          </div>
+
+          <div class="topbar-right">
+            <button class="icon-btn" type="button" aria-label="Thông báo">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dot" aria-hidden="true"></span>
+            </button>
+
+            <details class="profile" aria-label="Author profile dropdown">
+              <summary>
+                <span class="profile-avatar">AT</span>
+                <span class="profile-name">An Trần</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <div
+                class="profile-menu"
+                role="menu"
+                aria-label="Tùy chọn tài khoản"
+              >
+                <a href="#" role="menuitem">Hồ sơ tác giả</a>
+                <a href="#" role="menuitem">Cài đặt</a>
+                <a href="#" role="menuitem">Đăng xuất</a>
+              </div>
+            </details>
+          </div>
+        </header>
+
+        <main class="content">
+          <section class="form-card">
+            <div class="page-head">
+              <h1>Viết chương mới</h1>
+            </div>
+
+            <form class="chapter-form" action="#" method="post">
+              <div class="form-row two-cols">
+                <div class="form-group">
+                  <label for="chapter-number">Số chương</label>
+                  <input
+                    id="chapter-number"
+                    name="chapter-number"
+                    type="number"
+                    min="1"
+                    placeholder="Ví dụ: 45"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="chapter-title">Tiêu đề chương</label>
+                  <input
+                    id="chapter-title"
+                    name="chapter-title"
+                    type="text"
+                    placeholder="Nhập tiêu đề chương"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="chapter-content">Nội dung chương</label>
+                  <div
+                    class="editor-shell"
+                    aria-label="Trình soạn thảo mô phỏng"
+                  >
+                    <div class="editor-toolbar" role="toolbar">
+                      <button type="button" aria-label="In đậm">
+                        <i class="fa-solid fa-bold"></i>
+                      </button>
+                      <button type="button" aria-label="In nghiêng">
+                        <i class="fa-solid fa-italic"></i>
+                      </button>
+                      <button type="button" aria-label="Gạch dưới">
+                        <i class="fa-solid fa-underline"></i>
+                      </button>
+                      <span class="divider" aria-hidden="true"></span>
+                      <button type="button" aria-label="Canh trái">
+                        <i class="fa-solid fa-align-left"></i>
+                      </button>
+                      <button type="button" aria-label="Canh giữa">
+                        <i class="fa-solid fa-align-center"></i>
+                      </button>
+                      <button type="button" aria-label="Canh đều">
+                        <i class="fa-solid fa-align-justify"></i>
+                      </button>
+                      <span class="divider" aria-hidden="true"></span>
+                      <button type="button" aria-label="Danh sách">
+                        <i class="fa-solid fa-list-ul"></i>
+                      </button>
+                    </div>
+                    <textarea
+                      id="chapter-content"
+                      name="chapter-content"
+                      rows="18"
+                      placeholder="Viết nội dung chương tại đây..."
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button class="btn-primary" type="submit">Đăng chương</button>
+                <button class="btn-secondary" type="button">Lưu nháp</button>
+              </div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="overlay" aria-hidden="true"></div>
+
+    <script>
+      const toggleButton = document.querySelector(".menu-toggle");
+      const overlay = document.querySelector(".overlay");
+      const body = document.body;
+
+      if (toggleButton && overlay) {
+        toggleButton.addEventListener("click", function () {
+          body.classList.toggle("sidebar-open");
+        });
+
+        overlay.addEventListener("click", function () {
+          body.classList.remove("sidebar-open");
+        });
+      }
+    </script>
+  </body>
+</html>

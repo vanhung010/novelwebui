@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Author Workspace - Quản lý chương</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/manage-chapters.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+          <h2>Author Workspace</h2>
+        </div>
+
+        <nav class="menu" aria-label="Menu tác giả">
+          <a class="menu-item" href="author-dashboard.html"
+            ><i class="fa-solid fa-chart-line"></i> Tổng quan</a
+          >
+          <a class="menu-item active" href="manage-novels.html"
+            ><i class="fa-solid fa-book-open"></i> Quản lý truyện</a
+          >
+          <a class="menu-item" href="manage-comments.html"
+            ><i class="fa-solid fa-comments"></i> Bình luận</a
+          >
+          <a class="menu-item" href="withdrawal.html"
+            ><i class="fa-solid fa-wallet"></i> Tài chính</a
+          >
+        </nav>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="menu-toggle" type="button" aria-label="Mở menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <label class="search-box" aria-label="Tìm kiếm trên workspace">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="search"
+                placeholder="Tìm truyện, chương hoặc bình luận..."
+              />
+            </label>
+          </div>
+
+          <div class="topbar-right">
+            <button class="icon-btn" type="button" aria-label="Thông báo">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dot" aria-hidden="true"></span>
+            </button>
+
+            <details class="profile" aria-label="Author profile dropdown">
+              <summary>
+                <span class="profile-avatar">AT</span>
+                <span class="profile-name">An Trần</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <div
+                class="profile-menu"
+                role="menu"
+                aria-label="Tùy chọn tài khoản"
+              >
+                <a href="#" role="menuitem">Hồ sơ tác giả</a>
+                <a href="#" role="menuitem">Cài đặt</a>
+                <a href="#" role="menuitem">Đăng xuất</a>
+              </div>
+            </details>
+          </div>
+        </header>
+
+        <main class="content">
+          <section class="data-card">
+            <div class="page-head">
+              <h1>Danh sách chương: Phàm Nhân Tu Tiên</h1>
+              <div class="head-actions">
+                <a class="back-btn" href="manage-novels.html"
+                  ><i class="fa-solid fa-arrow-left"></i> Quay lại</a
+                >
+                <a class="primary-btn" href="chapter-form.html"
+                  ><i class="fa-solid fa-plus"></i> Thêm chương mới</a
+                >
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="chapters-table">
+                <thead>
+                  <tr>
+                    <th>Chương số</th>
+                    <th>Tiêu đề chương</th>
+                    <th>Lượt xem</th>
+                    <th>Ngày đăng</th>
+                    <th>Hành động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01</td>
+                    <td>Khởi đầu ở Tiểu Sơn Thôn</td>
+                    <td>12,540</td>
+                    <td>01/04/2026</td>
+                    <td>
+                      <div class="actions">
+                        <a class="action-btn" href="chapter-form.html"
+                          ><i class="fa-solid fa-pen-to-square"></i> Sửa</a
+                        >
+                        <button class="action-btn danger" type="button">
+                          <i class="fa-solid fa-trash"></i> Xóa
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>02</td>
+                    <td>Linh Căn Lộ Diện</td>
+                    <td>11,302</td>
+                    <td>03/04/2026</td>
+                    <td>
+                      <div class="actions">
+                        <a class="action-btn" href="chapter-form.html"
+                          ><i class="fa-solid fa-pen-to-square"></i> Sửa</a
+                        >
+                        <button class="action-btn danger" type="button">
+                          <i class="fa-solid fa-trash"></i> Xóa
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>03</td>
+                    <td>Con Đường Tu Hành</td>
+                    <td>9,881</td>
+                    <td>05/04/2026</td>
+                    <td>
+                      <div class="actions">
+                        <a class="action-btn" href="chapter-form.html"
+                          ><i class="fa-solid fa-pen-to-square"></i> Sửa</a
+                        >
+                        <button class="action-btn danger" type="button">
+                          <i class="fa-solid fa-trash"></i> Xóa
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>04</td>
+                    <td>Thử Thách Ngoại Môn</td>
+                    <td>8,756</td>
+                    <td>07/04/2026</td>
+                    <td>
+                      <div class="actions">
+                        <a class="action-btn" href="chapter-form.html"
+                          ><i class="fa-solid fa-pen-to-square"></i> Sửa</a
+                        >
+                        <button class="action-btn danger" type="button">
+                          <i class="fa-solid fa-trash"></i> Xóa
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="overlay" aria-hidden="true"></div>
+
+    <script>
+      const toggleButton = document.querySelector(".menu-toggle");
+      const overlay = document.querySelector(".overlay");
+      const body = document.body;
+
+      if (toggleButton && overlay) {
+        toggleButton.addEventListener("click", function () {
+          body.classList.toggle("sidebar-open");
+        });
+
+        overlay.addEventListener("click", function () {
+          body.classList.remove("sidebar-open");
+        });
+      }
+    </script>
+  </body>
+</html>
